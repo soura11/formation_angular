@@ -1,0 +1,83 @@
+<h1>Bonjour</h1>
+
+<p> il y a {{etudiants}} élèves</p>
+<p> le directeur se nomme : {{dir.prenom}}</p>
+<p> l'utilisateur se nomme : {{user.name}}</p>
+<p> l'email de l'utilisateur est : {{user.email}}</p>
+<p> l'id de  l'utilisateur est : {{user.id}}</p>
+
+<h1 (click)="afficheMessage('bonne nuit')">Bonsoir</h1>
+
+<div (click)="afficheMessage2('parent', $event)">
+    Message parent
+    <span (click)="afficheMessage2('enfant', $event)">Message enfant</span>
+</div>
+<br><br>
+<ul *ngIf="8 > 1">
+    <li>message</li>
+    <li>message</li>
+    <li>message</li>
+</ul>
+
+<ul>
+    <li *ngFor="let valeur of quantites">{{valeur}}</li>
+    </ul>
+<br><br>
+
+<ul *ngFor= "let user of users">
+    <li>{{user.id}}</li>
+    <li>{{user.email}}</li>
+    <li>{{user.name}}</li>
+</ul>
+<br>
+
+<ul *ngFor="let item of data">
+    <li>{{item.id}}, nom : {{item.name}}, adresse : {{item.address.streetName}} {{item.address.streetId}}</li>
+    <li *ngFor="let elements of item.projets">{{elements.libelle}} {{elements.description}}</li> 
+</ul>
+
+<!-- methode de damien
+    <div *ngFor="let item of data">
+    <h1>{{ item.id }}</h1>
+    <h1>{{ item.name }}</h1>
+    <h2>{{ item.address.streetName }}</h2>
+    <div *ngFor="let i of item.projets">
+        <h1>{{ i.libelle }}</h1>
+        <h2>{{ i.description }}</h2>
+    </div>
+</div>  -->
+
+<br />
+<ul>
+    <ng-container *ngFor="let user of users">
+        <li *ngIf="user.id! % 2 == 0; then si else sinon">
+            msg non affiche </li>
+        <ng-template #si>
+            <li>{{user.id}} est pair</li>
+        </ng-template>
+        <ng-template #sinon>
+            <li>{{user.id}} est impair</li>
+        </ng-template>
+    </ng-container>
+</ul>
+<br />
+
+<div [ngSwitch]="position">
+    <p *ngSwitchCase="1">Premier</p>
+    <p *ngSwitchCase="2">Second</p>
+    <p *ngSwitchDefault>Pas dans les premiers</p>
+    </div>
+
+<div [ngStyle]="{ color: 'red', fontWeight: 'bold' }">Texte en rouge et gras</div>
+<br>
+<div [ngClass]="{'red': true, 'blue': false}">
+    div avec des classes dynamiques
+    </div>
+
+<ul *ngFor="let user of users">
+    <li [ngClass]="user.id! % 2 == 0 ? 'blue' : 'red'">{{user.id}}</li>
+</ul>
+
+
+
+
