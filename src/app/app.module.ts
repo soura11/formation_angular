@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormulaireComponent } from './formulaire/formulaire.component';
-import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { FormulaireComponent } from './components/formulaire/formulaire.component';
+import { HomeComponent } from './components/home/home.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UsersComponent } from './components/users/users.component';
+import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppComponent,
     FormulaireComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

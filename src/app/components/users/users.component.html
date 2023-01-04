@@ -1,0 +1,10 @@
+<ul>
+    <ng-container *ngFor="let user of users">
+        <li>{{user.id}}</li>
+        <li>{{user.name}}</li>
+        <li>{{user.email}}</li>
+        <li>{{user.email}}</li>
+        <li><button (click)="getUserDetails(user.id!)">Details</button></li>
+    </ng-container>
+
+</ul>

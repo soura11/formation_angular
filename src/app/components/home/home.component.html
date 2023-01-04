@@ -8,6 +8,8 @@
 
 <h1 (click)="afficheMessage('bonne nuit')">Bonsoir</h1>
 
+<button (click)="goTo()">GoTo</button>
+
 <div (click)="afficheMessage2('parent', $event)">
     Message parent
     <span (click)="afficheMessage2('enfant', $event)">Message enfant</span>

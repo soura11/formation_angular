@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from '../interfaces/user';
+import { Router } from '@angular/router';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,10 @@ export class HomeComponent {
 
   user : User = {id : 1, name: 'John', email: 'john@yahoo.fr'}
   
+  // ici on fait l injection de dependance du service router
+  constructor(private router : Router){}
+
+
   afficheMessage(message: string): void {
     alert("mon message: " + message);
   }
@@ -69,5 +74,9 @@ export class HomeComponent {
   }]
 
   position : number = 2;
+
+  goTo(): void {
+    this.router.navigate(['/form']);
+  }
 
 }
