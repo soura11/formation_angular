@@ -1,1 +1,20 @@
-<p>formulaire works!</p>
+<form (ngSubmit)="register()" >
+    <div>
+      <label >Login</label>
+      <input name="login" [(ngModel)]="log" >
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" name="password" [(ngModel)]="pwd">
+    </div>
+    <button type="submit">Envoyer</button>
+    
+  
+  <br>
+  <br>
+
+  <ul *ngFor= "let user of data">
+    <li>{{data}}</li>
+  </ul>
+
+</form>
