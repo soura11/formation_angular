@@ -4,6 +4,7 @@ import { PersonService } from 'src/app/shared/person.service';
 import { NgForm } from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-person',
   templateUrl: './person.component.html',
@@ -24,7 +25,7 @@ export class PersonComponent {
   }, 5000);
   }
 
-  getAll() {
+  getAll(){
     this.personService.getAll().subscribe(res => {
       this.personnes = res;
       console.log(res);
