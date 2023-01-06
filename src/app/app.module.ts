@@ -8,10 +8,12 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailValidatorDirective } from './directives/email-validator.directive';
 import { PasswordValidatorDirective } from './directives/password-validator.directive';
-
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PersonComponent } from './components/person/person.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PasswordValidatorDirective } from './directives/password-validator.dire
     UsersComponent,
     UserComponent,
     EmailValidatorDirective,
-    PasswordValidatorDirective
+    PasswordValidatorDirective,
+    ReactiveFormComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,10 @@ import { PasswordValidatorDirective } from './directives/password-validator.dire
     // Module qui nous permet de faire des formulaires
     //de type Template-driven-form
     FormsModule,
+    // 2 eme Module qui nous permet de faire des formulaires
+    //de type Reactive
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

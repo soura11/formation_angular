@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Reactive Formulaire</h1>
+        <p class="lead">Chaque element de notre formulaire est un « FormGroup » </p>
+        <p class="lead">Chaque « formGroup » peut contenir 1 ou plusieurs « FormControl » </p>
+        <p class="lead">Chaque « FormControl » contient une valeur par défaut et un system de validation. </p>
+</div>
+<form action="POST" (ngSubmit)="register()" [formGroup]="userForm">
+    <div class="form-group">
+        <label for="id">Login:</label>
+        <input class="form-control" type="text" placeholder="Enter Login" name=login formControlName="login">
+    </div>
+    <div *ngIf="userForm.controls['login'].invalid && (userForm.controls['login'].dirty || userForm.controls['login'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="userForm.controls['login'].errors?.required">
+            Le login est obligatoire
+        </div>
+        <div *ngIf="userForm.controls['login'].errors?.erreur">
+        Premiere lettre en majuscule            
+        </div>
+    </div>
+        <div class="form-group">
+            <label for="id">Password:</label>
+            <input class="form-control" type="password" placeholder="Enter Password" name=password formControlName="password">
+        </div>
+        <div *ngIf="userForm.controls['password'].invalid && (userForm.controls['password'].dirty || userForm.controls['password'].touched)"
+                    class="alert alert-danger">
+            <div *ngIf="userForm.controls['password'].errors?.required">
+                Le password est obligatoire
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+<div class="container" style="margin-top: 15px;">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let element of users">
+            <span>{{element.login}}</span>
+            <button type="submit" class="btn btn-danger" (click)="delete(element)">
+                supprimer
+            </button>
+        </li>
+    </ul>
+  </div>

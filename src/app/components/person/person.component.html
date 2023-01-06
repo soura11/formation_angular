@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-6">
+        <form action="POST" (ngSubmit)="add(personneForm)" #personneForm=ngForm>
+            <input type="text" class="form-control" name="id" [(ngModel)]="personne.id" #id="ngModel" hidden>
+            <div class="form-group">
+                <label>firstName</label>
+                <input type="text" class="form-control" name="firstName" [(ngModel)]="personne.firstName" #firstName="ngModel">
+            </div>
+            <div class="form-group">
+                <label>lastName</label>
+                <input type="text" class="form-control" name="lastName" [(ngModel)]="personne.lastName" #lastName="ngModel">
+            </div>
+            <div class="form-group">
+                <label>age</label>
+                <input type="text" class="form-control" name="age" [(ngModel)]="personne.age" #age="ngModel">
+            </div>
+            <button type="submit" class="btn btn-success">Envoyer</button>
+        </form>
+    </div>
+    <div class="col-6">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of personnes">
+                <span>{{item.firstName}} {{item.lastName}} {{item.age}}</span>
+                <button class="btn btn-danger" (click)="delete(item.id!)">
+                    Supprimer
+                </button>
+                <button class="btn btn-primary" (click)="get(item.id!)">
+                    Afficher
+                </button>
+            </li>
+        </ul>        
+    </div>
+</div>
+

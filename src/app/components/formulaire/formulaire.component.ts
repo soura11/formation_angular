@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulaire',
@@ -7,18 +6,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./formulaire.component.css']
 })
 export class FormulaireComponent {
-  log!: string ;
-  pwd!: string;
-  data: any[] =[]
+  email!: string;
+  password!: string;
 
-  constructor(){}
+  tab: Array<{email: string, password: string}> = [];
+
   register() {
-    // Méthode appelé lors de la soumission
-    console.log(this.log, this.pwd);
-    this.data.push(this.log);
+    const obj: {email: string, password: string} = { email: this.email , password: this.password };
+    console.log(obj);
+    this.tab.push(obj);
+    this.tab.forEach(i => console.log(i));
+    this.email = '';
+    this.password = '';
   }
 
+  delete(obj: {email: string, password: string}) {
+    const index: number = this.tab.indexOf(obj);
+    this.tab.splice(index, 1);
+  }
+}
 
   
 
-}
+
