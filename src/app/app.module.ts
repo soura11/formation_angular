@@ -14,6 +14,9 @@ import { PasswordValidatorDirective } from './directives/password-validator.dire
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonComponent } from './components/person/person.component';
+import { SessionsComponent } from './sessions/sessions.component';
+import { Sessions2Component } from './sessions2/sessions2.component';
+import { DemandeintraComponent } from './demandeintra/demandeintra.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,9 @@ import { PersonComponent } from './components/person/person.component';
     PasswordValidatorDirective,
     ReactiveFormComponent,
     PersonComponent,
+    SessionsComponent,
+    Sessions2Component,
+    DemandeintraComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { UsersComponent } from './components/users/users.component';
 import { UserComponent } from './components/user/user.component';
 import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 import { PersonComponent } from './components/person/person.component';
+import { SessionsComponent } from './sessions/sessions.component';
+import { DemandeintraComponent } from './demandeintra/demandeintra.component';
 
 const routes: Routes =[
   {path:"", component: HomeComponent},
@@ -16,6 +18,8 @@ const routes: Routes =[
   {path: "users/:userId", component: UserComponent},
   {path: "react", component: ReactiveFormComponent},
   {path: "person", component: PersonComponent},
+  {path: "formation/session", component: SessionsComponent},
+  {path: "demandeintra", component: DemandeintraComponent},
 
   // toujours placer en dernier
   {path: "**", redirectTo: '/404'},
